@@ -36,13 +36,47 @@ extern "C"
     {
 
     }
+
+    #include <UART.h>
+}
+
+// Basado en TB3216-Getting-Started-with-USART-DS90003216
+void USART1_sendChar(char c)
+{
+    while (!(USART1.STATUS & USART_DREIF_bm))
+    {
+        ;
+    } 
+    USART1.TXDATAL = c;
+}
+
+void systemInit()
+{
+    // Configuracion basica UART1 a 4MHZ Async/normal mode    
+    #define CPU_FREQ 4000000UL
+    #define NORMAL_MODE 16U
+    #define ASYNC_MODE 64U
+    #define BAUD_RATE 115200UL
+    USART1.BAUD = (ASYNC_MODE*CPU_FREQ)/(NORMAL_MODE*BAUD_RATE);
+    USART1.CTRLB |= USART_TXEN_bm;
+
+    // Configuracion PINs ubicacion por defecto para TX/RX UART1
+    PORTC.DIR |= PIN0_bm; // 1 output / 0 input
+
+}
+
+void dummy_delay_500ms()
+{
+    for(int i; i<(CPU_FREQ/2); i++){}
 }
 
 
 int main()
-{    
+{   
+    systemInit();
     while(1)
     {
-
+        USART1_sendChar('A');
+        dummy_delay_500ms();
     }
 }
