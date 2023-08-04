@@ -84,6 +84,7 @@ Veamos ahora, las herramientas usadas y el diseño de esta solución.
 1. La ISR del Timer itera por la lista de botones, si tiene la bandera activa, revisa si el tiempo que lleva activo es igual al esperado, en caso de que si, desactiva el GPIO asociado, en caso de que NO, aumenta el contador de su tiempo activo.
 
 Esta secuencia puede ser capturada con un diagrama UML de secuencia como sigue:
+![alt text](MCU_Peripherals_sequence.png)
 
 ## Restricciones
 
