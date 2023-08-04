@@ -87,8 +87,6 @@ Esta secuencia puede ser capturada con un diagrama UML de secuencia como sigue:
 
 ## Restricciones
 
-**Nota:** Trabajo en progreso
-
 Lo que hace que el sistema en realidad no sea tan complicado, siempre y cuando logremos quitar del camino varias variables.
 
 1. El control no sería para cualquier carro, de hecho, seria exclusivo para uno que utilice un control remoto de 4 botones (avanzar, retroceder, girar llantas hacia la derecha y girar llantas hacia la izquierda), nótese que los botones de izquierda y derecha solo rotan las llantas, no las hacen girar.
