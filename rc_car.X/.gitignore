@@ -1,0 +1,10 @@
+# Based on
+# https://microchipdeveloper.com/mplabx:version-control-working-with
+.generated_files/
+# compiled files
+build/
+dist/
+# nbproject directory
+nbproject/Makefile-*
+nbproject/Package-*
+nbproject/private/
